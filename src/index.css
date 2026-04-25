@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-black:         #000000;
+  --color-surface:       #111111;
+  --color-surface-high:  #1a1a1a;
+
+  --color-red:           #e03030;
+  --color-red-hover:     #c52020;
+
+  --color-gold:          #c88b2a;
+  --color-gold-light:    #e8a83a;
+
+  --color-star:          #f5c518;
+
+  --color-text:          #ffffff;
+  --color-text-muted:    #888888;
+  --color-text-sub:      #c9c9c9;
+
+  --color-border:        #2a2a2a;
+
+  /* Fonts */
+  --font-display: "Cairo", "Bebas Neue", sans-serif;
+  --font-body:    "Cairo", sans-serif;
+
+  /* Radius */
+  --radius-pill: 9999px;
+  --radius-card: 0.75rem;
+}
+
+/* ================================
+   BASE
+================================ */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--color-black);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background-color: var(--color-red);
+    color: #fff;
+  }
+}
+
+/* ================================
+   COMPONENTS  (placeholder)
+================================ */
+@layer components {
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 1.75rem;
+    background-color: var(--color-red);
+    color: #fff;
+    font-weight: 600;
+    border-radius: var(--radius-pill);
+    border: none;
+    cursor: pointer;
+    transition: background 150ms ease, transform 150ms ease;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-red-hover);
+    transform: translateY(-1px);
+  }
+}
+
+/* ================================
+   UTILITIES
+================================ */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
