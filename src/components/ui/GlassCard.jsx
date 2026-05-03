@@ -5,18 +5,19 @@ import PriceConvertor from '../../utils/price-convertor';
  * The info panel floats over the bottom of the image with a backdrop blur.
  * Best for: hero items, featured dishes, premium sections.
  */
-export default function GlassCard({ img, price, Name, Description }) {
+export default function GlassCard({ img, price, Name, Description, cardRef }) {
   const { egp, piasters } = PriceConvertor(price);
 
   return (
-    <div className="group relative w-full max-w-[400px]">
+    <div className="group relative w-full max-w-[400px]" ref={cardRef}>
       <div
         className="
           relative overflow-hidden rounded-card
           border border-border
           transition-all duration-500 ease-out
-          hover:border-red/40
+          hover:border-red/40 group-data-[mobile-hover=true]:border-red/40
           hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),0_0_30px_rgba(224,48,48,0.08)]
+          group-data-[mobile-hover=true]:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),0_0_30px_rgba(224,48,48,0.08)]
         "
       >
         {/* Full Image */}
@@ -24,10 +25,11 @@ export default function GlassCard({ img, price, Name, Description }) {
           <img
             src={img}
             alt={Name}
+            loading="lazy"
             className="
               w-full h-full object-cover
               transition-transform duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)]
-              group-hover:scale-110
+              group-hover:scale-110 group-data-[mobile-hover=true]:scale-110
             "
           />
 
@@ -42,7 +44,7 @@ export default function GlassCard({ img, price, Name, Description }) {
               border-t border-white/[0.08]
               px-4 py-4 sm:px-5 sm:py-5
               transition-all duration-400
-              group-hover:bg-white/[0.1]
+              group-hover:bg-white/[0.1] group-data-[mobile-hover=true]:bg-white/[0.1]
             "
           >
             {/* Name + Price Row */}
@@ -60,8 +62,8 @@ export default function GlassCard({ img, price, Name, Description }) {
                   shrink-0 font-display text-red font-bold
                   text-lg sm:text-xl leading-none
                   transition-all duration-300
-                  group-hover:text-gold-light
-                  group-hover:drop-shadow-[0_0_8px_rgba(232,168,58,0.4)]
+                  group-hover:text-gold-light group-data-[mobile-hover=true]:text-gold-light
+                  group-hover:drop-shadow-[0_0_8px_rgba(232,168,58,0.4)] group-data-[mobile-hover=true]:drop-shadow-[0_0_8px_rgba(232,168,58,0.4)]
                 "
               >
                 {egp}<span className="text-xs opacity-60">.{piasters}</span>

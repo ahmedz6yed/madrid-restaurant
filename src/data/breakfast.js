@@ -14,19 +14,18 @@ import romiFries from "../assets/break-fast/romi-fries.jpg";
 import splitImage3 from "../assets/break-fast/split-image-3.jpg";
 import tahinSaladFries from "../assets/break-fast/tahin-salad-fries.png";
 
-
-export  const menuItems = [
+export const menuItems = [
   // 🫘 فول
   {
     id: 1,
-    img : beans,
+    img: beans,
     Name: "سندوتش فول",
     Description: "فول بلدي متبل بزيت وكمون",
-    price: 10,
+    price: 11,
   },
   {
     id: 2,
-    img : hotBeans,
+    img: hotBeans,
     Name: "سندوتش فول زيت حار",
     Description: "فول بزيت حار ولمسة شطة",
     price: 12,
@@ -36,20 +35,20 @@ export  const menuItems = [
     img: eggsBeans,
     Name: "سندوتش فول بالبيض المقلي",
     Description: "فول مع بيض مقلي طازة",
-    price: 15,
+    price: 18,
   },
   {
     id: 4,
-    img : beggBeans,
+    img: beggBeans,
     Name: "سندوتش فول بالبيض المسلوق",
     Description: "فول مع بيض مسلوق وبهارات",
-    price: 14,
+    price: 18,
   },
 
   // 🍟 بطاطس
   {
     id: 5,
-    img:tahinSaladFries,
+    img: tahinSaladFries,
     Name: "سندوتش بطاطس بالسلطة والطحينة",
     Description: "بطاطس مقرمشة مع طحينة وسلطة",
     price: 12,
@@ -59,25 +58,25 @@ export  const menuItems = [
     img: ketFries,
     Name: "سندوتش بطاطس كاتشب",
     Description: "بطاطس مع كاتشب كلاسيك",
-    price: 10,
+    price: 15,
   },
   {
     id: 7,
-    img : mionizFries,
+    img: mionizFries,
     Name: "سندوتش بطاطس مايونيز",
     Description: "بطاطس مع مايونيز كريمي",
-    price: 11,
+    price: 15,
   },
   {
     id: 8,
-    img : romiFries,
+    img: romiFries,
     Name: "سندوتش بطاطس بالجبنة الرومي",
     Description: "بطاطس مع جبنة رومي سايحة",
-    price: 14,
+    price: 16,
   },
   {
     id: 9,
-    img : mkFries,
+    img: mkFries,
     Name: "سندوتش بطاطس كاتشب ومايونيز",
     Description: "بطاطس مع كاتشب ومايونيز",
     price: 12,
@@ -95,14 +94,14 @@ export  const menuItems = [
   // 🥚 بيض
   {
     id: 11,
-    img : boiledEggs,
+    img: boiledEggs,
     Name: "سندوتش بيض مسلوق",
     Description: "بيض مسلوق مع بهارات خفيفة",
     price: 12,
   },
   {
     id: 12,
-    img:splitImage3,
+    img: splitImage3,
     Name: "سندوتش بيض مقلي",
     Description: "بيض مخفوق طري ومتبل",
     price: 13,
@@ -129,5 +128,5 @@ export  const menuItems = [
     Name: "طبق مخلل",
     Description: "تشكيلة مخللات بلدي",
     price: 8,
-  }
+  },
 ];

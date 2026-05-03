@@ -11,6 +11,7 @@ export default function MenuItemCard({ image, name, description, price }) {
           <img
             src={image}
             alt={name}
+            loading="lazy"
             className="w-full h-full object-cover rounded-full border-4 border-zinc-900/10 shadow-inner"
           />
         </div>

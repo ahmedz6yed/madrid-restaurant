@@ -7,21 +7,24 @@ import { riceMenu } from "./data/dull-meals";
 import { crepeMenu } from "./data/creps";
 import { menuItems } from "./data/breakfast";
 import { sandwitchItems } from "./data/sandwitches";
+import { burgerData } from "./data/burger-data";
 import BoldCard from "./components/ui/BoldCard";
 import CinemaCard from "./components/ui/CinemaCard";
 import MinimalCard from "./components/ui/MinimalCard";
 import { useMobileAutoHover } from "./hooks/useMobileAutoHover";
-
+import { lunchMeals } from "./data/lunch-meals";
+import GlassCard from "./components/ui/GlassCard";
 const categories = [
-  { id: 'creps', name: 'كريبات' },
-  { id: 'meals', name: 'وجبات' },
-  {id: 'lunch' , name: "ساندوتشات الغدا"},
-  {id:"sabdwitches" , name: "سندوتشات فينو "},
-  { id: 'breakfast', name: 'سندوتشات الإفطار' },
+  { id: "sabdwitches", name: "سندوتشات فينو " },
+  { id: "lunch", name: "ساندوتشات الغدا" },
+  { id: "breakfast", name: "سندوتشات الإفطار" },
+
+  { id: "burger", name: "برجر" },
+  { id: "meals", name: "وجبات" },
 ];
 
 export default function App() {
-  const [activeCategory, setActiveCategory] = useState('breakfast');
+  const [activeCategory, setActiveCategory] = useState("breakfast");
   const sectionRefs = useRef({});
   const hoverRef = useMobileAutoHover();
 
@@ -35,7 +38,7 @@ export default function App() {
           }
         }
       },
-      { rootMargin: '-50% 0px -50% 0px' }
+      { rootMargin: "-50% 0px -50% 0px" },
     );
 
     const currentRefs = sectionRefs.current;
@@ -56,7 +59,7 @@ export default function App() {
     if (el) {
       const navHeight = 80;
       const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
-      window.scrollTo({ top, behavior: 'smooth' });
+      window.scrollTo({ top, behavior: "smooth" });
     }
   };
 
@@ -67,16 +70,17 @@ export default function App() {
       {/* Sticky Navigation */}
       <div className="sticky top-0 z-40 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/10 shadow-lg">
         <div className="max-w-7xl mx-auto">
-          <nav className="flex gap-2 sm:gap-4 overflow-x-auto no-scrollbar py-4 justify-start md:justify-center px-4">
+          <nav className="flex flex-wrap gap-2 sm:gap-3 py-4 justify-center px-4">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => scrollToSection(category.id)}
                 className={`
-                  whitespace-nowrap px-5 py-2 font-display text-base sm:text-lg tracking-wide rounded-full transition-all duration-300
-                  ${activeCategory === category.id
-                    ? 'bg-red-600 text-white shadow-[0_0_15px_rgba(220,38,38,0.3)]'
-                    : 'text-[#888] hover:text-white hover:bg-white/5'
+                  whitespace-nowrap px-4 py-1.5 sm:px-5 sm:py-2 font-display text-sm sm:text-base tracking-wide rounded-full transition-all duration-300
+                  ${
+                    activeCategory === category.id
+                      ? "bg-red-600 text-white shadow-[0_0_15px_rgba(220,38,38,0.3)]"
+                      : "text-[#888] hover:text-white hover:bg-white/5"
                   }
                 `}
               >
@@ -89,11 +93,10 @@ export default function App() {
 
       {/* All Sections on One Page */}
       <main className="flex-grow py-12 px-4 sm:px-6 lg:px-12">
-
         {/* ── سندوتشات الإفطار ── */}
         <section
           id="breakfast"
-          ref={(el) => (sectionRefs.current['breakfast'] = el)}
+          ref={(el) => (sectionRefs.current["breakfast"] = el)}
           className="max-w-7xl mx-auto mb-24"
         >
           <SectionTitle title="سندوتشات الإفطار" />
@@ -110,11 +113,84 @@ export default function App() {
             ))}
           </div>
         </section>
+        {/* ── ساندوتشات الغدا (Categorized) ── */}
+        <section
+          id="lunch"
+          ref={(el) => (sectionRefs.current["lunch"] = el)}
+          className="max-w-7xl mx-auto mb-24 scroll-mt-24"
+        >
+          <SectionTitle title="ساندوتشات الغدا" />
 
+          {/* Sub-category: كريبات (BoldCard) */}
+          <div id="crep-sub" className="mb-16 scroll-mt-32">
+            <h3 className="font-display text-2xl text-gold mb-8 flex items-center gap-3">
+              <span className="h-px w-8 bg-gold/30"></span>
+              كريبات
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 justify-items-center">
+              {lunchMeals
+                .filter((m) => m.type === "كريب")
+                .map((item, idx) => (
+                  <BoldCard
+                    key={idx}
+                    img={item.img}
+                    Name={item.Name}
+                    Description={item.Description}
+                    price={item.price}
+                    cardRef={hoverRef}
+                  />
+                ))}
+            </div>
+          </div>
+
+          {/* Sub-category: سوري (CrepeCard) */}
+          <div id="sori-sub" className="mb-16 scroll-mt-32">
+            <h3 className="font-display text-2xl text-gold mb-8 flex items-center gap-3">
+              <span className="h-px w-8 bg-gold/30"></span>
+              سوري
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 justify-items-center">
+              {lunchMeals
+                .filter((m) => m.type === "سوري")
+                .map((item, idx) => (
+                  <CrepeCard
+                    key={idx}
+                    img={item.img}
+                    Name={item.Name}
+                    Description={item.Description}
+                    price={item.price}
+                    cardRef={hoverRef}
+                  />
+                ))}
+            </div>
+          </div>
+
+          {/* Sub-category: بلدي (CinemaCard) */}
+          <div id="baladi-sub" className="scroll-mt-32">
+            <h3 className="font-display text-2xl text-gold mb-8 flex items-center gap-3">
+              <span className="h-px w-8 bg-gold/30"></span>
+              بلدي
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 justify-items-center">
+              {lunchMeals
+                .filter((m) => m.type === "بلدي")
+                .map((item, idx) => (
+                  <CinemaCard
+                    key={idx}
+                    img={item.img}
+                    Name={item.Name}
+                    Description={item.Description}
+                    price={item.price}
+                    cardRef={hoverRef}
+                  />
+                ))}
+            </div>
+          </div>
+        </section>
         {/* ── سندوتشات فينو ── */}
         <section
           id="sabdwitches"
-          ref={(el) => (sectionRefs.current['sabdwitches'] = el)}
+          ref={(el) => (sectionRefs.current["sabdwitches"] = el)}
           className="max-w-7xl mx-auto mb-24"
         >
           <SectionTitle title="سندوتشات فينو" />
@@ -135,7 +211,7 @@ export default function App() {
         {/* ── الوجبات ── */}
         <section
           id="meals"
-          ref={(el) => (sectionRefs.current['meals'] = el)}
+          ref={(el) => (sectionRefs.current["meals"] = el)}
           className="max-w-7xl mx-auto mb-24"
         >
           <SectionTitle title="وجبات" />
@@ -152,10 +228,31 @@ export default function App() {
           </div>
         </section>
 
-        {/* ── كريبات ── */}
+        {/* ── برجر ── */}
+        <section
+          id="burger"
+          ref={(el) => (sectionRefs.current["burger"] = el)}
+          className="max-w-7xl mx-auto mb-24"
+        >
+          <SectionTitle title="برجر" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 justify-items-center">
+            {burgerData.map((item) => (
+              <GlassCard
+                key={item.id}
+                img={item.img}
+                Name={item.Name}
+                Description={item.Description}
+                price={item.price}
+                cardRef={hoverRef}
+              />
+            ))}
+          </div>
+        </section>
+
+        {/* ── كريبات ──
         <section
           id="creps"
-          ref={(el) => (sectionRefs.current['creps'] = el)}
+          ref={(el) => (sectionRefs.current["creps"] = el)}
           className="max-w-7xl mx-auto mb-24"
         >
           <SectionTitle title="كريبات" />
@@ -171,9 +268,46 @@ export default function App() {
               />
             ))}
           </div>
-        </section>
-
+        </section> */}
       </main>
+
+      {/* Mobile Vertical Sub-Navigation for Lunch Section */}
+      {activeCategory === "lunch" && (
+        <div className="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-2 p-2 sm:hidden animate-in fade-in slide-in-from-right-4 duration-300">
+          {[
+            { id: "crep-sub", label: "كريب" },
+            { id: "sori-sub", label: "سوري" },
+            { id: "baladi-sub", label: "بلدي" },
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => {
+                const el = document.getElementById(tab.id);
+                if (el) {
+                  const offset = 100;
+                  const bodyRect = document.body.getBoundingClientRect().top;
+                  const elementRect = el.getBoundingClientRect().top;
+                  const elementPosition = elementRect - bodyRect;
+                  const offsetPosition = elementPosition - offset;
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth",
+                  });
+                }
+              }}
+              className="
+                bg-red-600/90 backdrop-blur-sm text-white px-2 py-4 rounded-l-lg 
+                font-display text-sm tracking-widest shadow-xl border-l border-y border-white/20
+                hover:bg-red-500 active:scale-95 transition-all
+                [writing-mode:vertical-rl] flex items-center justify-center uppercase
+              "
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+      )}
+
       <Footer />
     </div>
   );

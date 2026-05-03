@@ -25,6 +25,7 @@ export default function CinemaCard({ img, price, Name, Description, cardRef }) {
         <img
           src={img}
           alt={Name}
+          loading="lazy"
           className="
             absolute inset-0 w-full h-full object-cover
             transition-transform duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)]

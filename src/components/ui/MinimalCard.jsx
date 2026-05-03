@@ -34,6 +34,7 @@ export default function MinimalCard({ img, price, Name, Description, cardRef }) 
           <img
             src={img}
             alt={Name}
+            loading="lazy"
             className="
               w-full h-full object-cover
               transition-transform duration-600

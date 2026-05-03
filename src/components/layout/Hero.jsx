@@ -10,17 +10,19 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-4">
         {/* Main Title */}
-        <h1 className="
-          font-display text-7xl sm:text-8xl md:text-9xl 
-          tracking-[0.15em] uppercase mb-4
+        <h1
+          className="
+          font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl 
+          tracking-[0.1em] sm:tracking-[0.15em] uppercase mb-4
           bg-gradient-to-b from-white via-white/90 to-gold
           bg-clip-text text-transparent
           drop-shadow-[0_0_30px_rgba(200,139,42,0.2)]
           selection:text-gold
-        ">
-          Madrid
+        "
+        >
+          Manchester
         </h1>
-        
+
         {/* Subtitle with decorative lines */}
         <div className="flex items-center gap-4 mb-6">
           <div className="h-px w-12 sm:w-20 bg-gradient-to-r from-transparent to-red-600/50" />
@@ -32,12 +34,18 @@ export default function Hero() {
 
         {/* Description */}
         <p className="font-body font-light text-[#888] max-w-md mb-10 text-sm sm:text-base leading-relaxed">
-          تجربة طعام فريدة تجمع بين الأجواء الفاخرة والوصفات العريقة المحضرة بشغف. اكتشف قائمة طعامنا المميزة الآن.
+          تجربة طعام فريدة تجمع بين الأجواء الفاخرة والوصفات العريقة المحضرة
+          بشغف. اكتشف قائمة طعامنا المميزة الآن.
         </p>
 
         {/* CTA Button */}
-        <button 
-          onClick={() => window.scrollTo({ top: window.innerHeight * 0.7, behavior: 'smooth' })}
+        <button
+          onClick={() =>
+            window.scrollTo({
+              top: window.innerHeight * 0.7,
+              behavior: "smooth",
+            })
+          }
           className="
             group relative px-8 py-3.5 overflow-hidden rounded-full cursor-pointer
             bg-red-600 text-white font-body font-medium tracking-wide

@@ -9,13 +9,13 @@ import tuna_salad from "../assets/sandwitches/tuna-salad.png";
 import allInOne from "../assets/sandwitches/all-in-one.png";
 
 export const sandwitchItems = [
-    {
-      id: 1,
-      img: tuna_salad, 
-      Name: "سلطة تونة ",
-      Description: "ساندوتش سلطة تونة بالخضار",
-      price: 17
-    },
+  {
+    id: 1,
+    img: tuna_salad,
+    Name: "سلطة تونة ",
+    Description: "ساندوتش سلطة تونة بالخضار",
+    price: 17,
+  },
   {
     id: 2,
     img: kiriRomi,
@@ -58,18 +58,18 @@ export const sandwitchItems = [
     Description: "سندوتش جبنه رومي",
     price: 25,
   },
-   {
+  {
     id: 8,
     img: allInOne,
     Name: "ساندوتش كله في واحد",
     Description: "لانشون , جبنه رومي , جبنه كيري ,جبنه شيدر",
-    price: 17
-   },
+    price: 17,
+  },
   {
     id: 9,
     img: cottageFeno,
     Name: "جبنة قريش",
     Description: "سندوتش جبنة قريش",
     price: 15,
-  }
+  },
 ];

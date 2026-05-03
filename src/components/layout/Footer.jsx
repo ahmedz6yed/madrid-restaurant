@@ -1,18 +1,21 @@
-import React from 'react';
+import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#050505] border-t border-white/5 pt-16 pb-8 px-6 overflow-hidden" dir="rtl">
+    <footer
+      className="bg-[#050505] border-t border-white/5 pt-16 pb-8 px-6 overflow-hidden"
+      dir="rtl"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
-          
           {/* Brand Section */}
           <div className="space-y-4">
             <h2 className="font-display text-4xl font-black text-white tracking-wider">
               مطعم <span className="text-red-600">مدريد</span>
             </h2>
             <p className="text-text-muted text-sm leading-relaxed max-w-xs">
-              نقدم لكم أجود أنواع اللحوم والمأكولات الإسبانية بلمسة مصرية أصيلة. تجربة طعام لا تُنسى في أجواء فاخرة.
+              نقدم لكم أجود أنواع اللحوم والمأكولات الإسبانية بلمسة مصرية أصيلة.
+              تجربة طعام لا تُنسى في أجواء فاخرة.
             </p>
           </div>
 
@@ -22,23 +25,57 @@ export default function Footer() {
               اتصل بنا
             </h3>
             <div className="space-y-4">
+              <a 
+                href="https://wa.me/201500103961" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 group/phone hover:translate-x-1 transition-transform"
+              >
+                <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-red-500 group-hover/phone:bg-red-500 group-hover/phone:text-white transition-colors">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                </div>
+                <span className="text-text-sub font-medium group-hover/phone:text-white transition-colors" dir="ltr">
+                  01500103961
+                </span>
+              </a>
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-red-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
                 </div>
-                <span className="text-text-sub font-medium" dir="ltr">01122570983</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-red-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                </div>
-                <span className="text-text-sub">القاهرة، المعادي - شارع 9</span>
+                <span className="text-text-sub">
+                  مول ذا ليدج بالأندلس، التجمع الخامس
+                </span>
               </div>
             </div>
           </div>
 
           {/* Social Media */}
-          <div className="space-y-6">
+          {/* <div className="space-y-6">
             <h3 className="text-gold font-bold text-lg border-b border-gold/20 pb-2 inline-block">
               تابعنا
             </h3>
@@ -54,10 +91,8 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
-
-       
       </div>
     </footer>
   );

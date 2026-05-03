@@ -25,6 +25,7 @@ export default function BoldCard({ img, price, Name, Description, cardRef }) {
           <img
             src={img}
             alt={Name}
+            loading="lazy"
             className="
               w-full h-full object-cover
               transition-transform duration-600
