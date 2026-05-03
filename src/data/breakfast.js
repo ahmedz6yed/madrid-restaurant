@@ -103,7 +103,7 @@ export  const menuItems = [
   {
     id: 12,
     img:splitImage3,
-    Name: "سندوتش بيض scrambled",
+    Name: "سندوتش بيض مقلي",
     Description: "بيض مخفوق طري ومتبل",
     price: 13,
   },

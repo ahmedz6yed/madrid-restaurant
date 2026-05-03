@@ -10,7 +10,14 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-4">
         {/* Main Title */}
-        <h1 className="font-display text-6xl sm:text-7xl md:text-8xl tracking-[0.1em] text-[#efefef] uppercase mb-4 drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+        <h1 className="
+          font-display text-7xl sm:text-8xl md:text-9xl 
+          tracking-[0.15em] uppercase mb-4
+          bg-gradient-to-b from-white via-white/90 to-gold
+          bg-clip-text text-transparent
+          drop-shadow-[0_0_30px_rgba(200,139,42,0.2)]
+          selection:text-gold
+        ">
           Madrid
         </h1>
         
