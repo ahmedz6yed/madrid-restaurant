@@ -14,9 +14,9 @@ import { lunchMeals } from "./data/lunch-meals";
 import GlassCard from "./components/ui/GlassCard";
 const categories = [
   { id: "burger", name: "برجر" },
-  { id: "meals", name: "وجبات" },
   { id: "lunch", name: "سندوتشات الغدا" },
   { id: "breakfast", name: "سندوتشات الإفطار" },
+  { id: "meals", name: "وجبات" },
 ];
 
 export default function App() {

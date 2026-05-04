@@ -127,6 +127,13 @@ export const lunchMeals = [
   },
   //------------------------------creps
   {
+    img: friesCrep,
+    Name: "كريب بطاطس",
+    Description: "بطاطس محمرة، كاتشب، مايونيز، ميكس جبن",
+    price: 39.99,
+    type: "كريب",
+  },
+  {
     img: kebdacrep,
     Name: "كريب كبدة اسكندراني",
     Description: "كبدة اسكندراني، طحينة، صوص فلفل وليمون",
@@ -145,7 +152,7 @@ export const lunchMeals = [
     img: zingercrep,
     Name: "كريب زنجر",
     Description: "زنجر، ميكس جبن، صوص تايجر",
-    price: 54.99,
+    price: 74.99,
     type: "كريب",
   },
   {
@@ -169,13 +176,7 @@ export const lunchMeals = [
     price: 54.99,
     type: "كريب",
   },
-  {
-    img: friesCrep,
-    Name: "كريب بطاطس",
-    Description: "بطاطس محمرة، كاتشب، مايونيز، ميكس جبن",
-    price: 39.99,
-    type: "كريب",
-  },
+
   {
     img: panecrep,
     Name: "كريب فراخ بانيه",
