@@ -4,9 +4,7 @@ import CrepeCard from "./components/ui/CrepeCard";
 import Footer from "./components/layout/Footer";
 import Hero from "./components/layout/Hero";
 import { riceMenu } from "./data/dull-meals";
-import { crepeMenu } from "./data/creps";
 import { menuItems } from "./data/breakfast";
-import { sandwitchItems } from "./data/sandwitches";
 import { burgerData } from "./data/burger-data";
 import BoldCard from "./components/ui/BoldCard";
 import CinemaCard from "./components/ui/CinemaCard";
@@ -15,18 +13,28 @@ import { useMobileAutoHover } from "./hooks/useMobileAutoHover";
 import { lunchMeals } from "./data/lunch-meals";
 import GlassCard from "./components/ui/GlassCard";
 const categories = [
-  { id: "sabdwitches", name: "سندوتشات فينو " },
-  { id: "lunch", name: "ساندوتشات الغدا" },
-  { id: "breakfast", name: "سندوتشات الإفطار" },
-
   { id: "burger", name: "برجر" },
   { id: "meals", name: "وجبات" },
+  { id: "lunch", name: "سندوتشات الغدا" },
+  { id: "breakfast", name: "سندوتشات الإفطار" },
 ];
 
 export default function App() {
   const [activeCategory, setActiveCategory] = useState("breakfast");
+  const [showSidebar, setShowSidebar] = useState(false);
   const sectionRefs = useRef({});
   const hoverRef = useMobileAutoHover();
+
+  // Handle sidebar visibility based on scroll position (hide in Hero 30%)
+  useEffect(() => {
+    const handleScroll = () => {
+      const threshold = window.innerHeight * 0.3;
+      setShowSidebar(window.scrollY > threshold);
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Scroll-spy: update activeCategory based on which section is in view
   useEffect(() => {
@@ -93,24 +101,56 @@ export default function App() {
 
       {/* All Sections on One Page */}
       <main className="flex-grow py-12 px-4 sm:px-6 lg:px-12">
-        {/* ── سندوتشات الإفطار ── */}
+        {/* ── سندوتشات الإفطار (Categorized) ── */}
         <section
           id="breakfast"
           ref={(el) => (sectionRefs.current["breakfast"] = el)}
-          className="max-w-7xl mx-auto mb-24"
+          className="max-w-7xl mx-auto mb-24 scroll-mt-24"
         >
           <SectionTitle title="سندوتشات الإفطار" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 justify-items-center">
-            {menuItems.map((item) => (
-              <CinemaCard
-                key={item.id}
-                img={item.img}
-                Name={item.Name}
-                Description={item.Description}
-                price={item.price}
-                cardRef={hoverRef}
-              />
-            ))}
+
+          {/* Sub-category: بلدي (CinemaCard) */}
+          <div id="breakfast-baladi" className="mb-16 scroll-mt-32">
+            <h3 className="font-display text-2xl text-gold mb-8 flex items-center gap-3">
+              <span className="h-px w-8 bg-gold/30"></span>
+              بلدي
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 justify-items-center">
+              {menuItems
+                .filter((m) => m.type === "بلدي")
+                .map((item) => (
+                  <CinemaCard
+                    key={item.id}
+                    img={item.img}
+                    Name={item.Name}
+                    Description={item.Description}
+                    price={item.price}
+                    cardRef={hoverRef}
+                  />
+                ))}
+            </div>
+          </div>
+
+          {/* Sub-category: فينو (CrepeCard) */}
+          <div id="breakfast-feno" className="scroll-mt-32">
+            <h3 className="font-display text-2xl text-gold mb-8 flex items-center gap-3">
+              <span className="h-px w-8 bg-gold/30"></span>
+              فينو
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 justify-items-center">
+              {menuItems
+                .filter((m) => m.type === "فينو")
+                .map((item) => (
+                  <CrepeCard
+                    key={item.id}
+                    img={item.img}
+                    Name={item.Name}
+                    Description={item.Description}
+                    price={item.price}
+                    cardRef={hoverRef}
+                  />
+                ))}
+            </div>
           </div>
         </section>
         {/* ── ساندوتشات الغدا (Categorized) ── */}
@@ -188,7 +228,7 @@ export default function App() {
           </div>
         </section>
         {/* ── سندوتشات فينو ── */}
-        <section
+        {/* <section
           id="sabdwitches"
           ref={(el) => (sectionRefs.current["sabdwitches"] = el)}
           className="max-w-7xl mx-auto mb-24"
@@ -206,7 +246,7 @@ export default function App() {
               />
             ))}
           </div>
-        </section>
+        </section> */}
 
         {/* ── الوجبات ── */}
         <section
@@ -271,42 +311,22 @@ export default function App() {
         </section> */}
       </main>
 
-      {/* Mobile Vertical Sub-Navigation for Lunch Section */}
-      {activeCategory === "lunch" && (
-        <div className="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-2 p-2 sm:hidden animate-in fade-in slide-in-from-right-4 duration-300">
-          {[
-            { id: "crep-sub", label: "كريب" },
-            { id: "sori-sub", label: "سوري" },
-            { id: "baladi-sub", label: "بلدي" },
-          ].map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => {
-                const el = document.getElementById(tab.id);
-                if (el) {
-                  const offset = 100;
-                  const bodyRect = document.body.getBoundingClientRect().top;
-                  const elementRect = el.getBoundingClientRect().top;
-                  const elementPosition = elementRect - bodyRect;
-                  const offsetPosition = elementPosition - offset;
-                  window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth",
-                  });
-                }
-              }}
-              className="
-                bg-red-600/90 backdrop-blur-sm text-white px-2 py-4 rounded-l-lg 
-                font-display text-sm tracking-widest shadow-xl border-l border-y border-white/20
-                hover:bg-red-500 active:scale-95 transition-all
-                [writing-mode:vertical-rl] flex items-center justify-center uppercase
-              "
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-      )}
+      <MobileSubNav
+        active={activeCategory === "lunch" && showSidebar}
+        tabs={[
+          { id: "crep-sub", label: "كريب" },
+          { id: "sori-sub", label: "سوري" },
+          { id: "baladi-sub", label: "بلدي" },
+        ]}
+      />
+
+      <MobileSubNav
+        active={activeCategory === "breakfast" && showSidebar}
+        tabs={[
+          { id: "breakfast-baladi", label: "بلدي" },
+          { id: "breakfast-feno", label: "فينو" },
+        ]}
+      />
 
       <Footer />
     </div>
@@ -322,6 +342,43 @@ function SectionTitle({ title }) {
         {title}
       </h2>
       <div className="h-px flex-grow bg-gradient-to-l from-transparent via-white/10 to-transparent" />
+    </div>
+  );
+}
+
+/* ── Mobile Vertical Sub-Navigation ── */
+function MobileSubNav({ active, tabs }) {
+  if (!active) return null;
+
+  return (
+    <div className="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-2 p-2 sm:hidden animate-in fade-in slide-in-from-right-4 duration-300">
+      {tabs.map((tab) => (
+        <button
+          key={tab.id}
+          onClick={() => {
+            const el = document.getElementById(tab.id);
+            if (el) {
+              const offset = 100;
+              const bodyRect = document.body.getBoundingClientRect().top;
+              const elementRect = el.getBoundingClientRect().top;
+              const elementPosition = elementRect - bodyRect;
+              const offsetPosition = elementPosition - offset;
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth",
+              });
+            }
+          }}
+          className="
+            bg-red-600/90 backdrop-blur-sm text-white px-2 py-4 rounded-l-lg 
+            font-display text-sm tracking-widest shadow-xl border-l border-y border-white/20
+            hover:bg-red-500 active:scale-95 transition-all
+            [writing-mode:vertical-rl] flex items-center justify-center uppercase
+          "
+        >
+          {tab.label}
+        </button>
+      ))}
     </div>
   );
 }

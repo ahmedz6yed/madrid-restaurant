@@ -10,8 +10,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           {/* Brand Section */}
           <div className="space-y-4">
-            <h2 className="font-display text-4xl font-black text-white tracking-wider">
-              مطعم <span className="text-red-600">مدريد</span>
+            <h2 className="font-display text-5xl font-black text-white tracking-wider">
+              <span className="text-red-600">Manchester</span>
             </h2>
             <p className="text-text-muted text-sm leading-relaxed max-w-xs">
               نقدم لكم أجود أنواع اللحوم والمأكولات الإسبانية بلمسة مصرية أصيلة.
@@ -25,9 +25,9 @@ export default function Footer() {
               اتصل بنا
             </h3>
             <div className="space-y-4">
-              <a 
-                href="https://wa.me/201500103961" 
-                target="_blank" 
+              <a
+                href="https://wa.me/201500103961"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 group/phone hover:translate-x-1 transition-transform"
               >
@@ -46,7 +46,10 @@ export default function Footer() {
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                   </svg>
                 </div>
-                <span className="text-text-sub font-medium group-hover/phone:text-white transition-colors" dir="ltr">
+                <span
+                  className="text-text-sub font-medium group-hover/phone:text-white transition-colors"
+                  dir="ltr"
+                >
                   01500103961
                 </span>
               </a>

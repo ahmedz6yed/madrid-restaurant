@@ -9,7 +9,6 @@ import hotDogSori from "../assets/sori/hotdog-sori.png";
 
 //-----------------------------------
 import fahitabaladi from "../assets/baladi-lunch/fahita-baladi.png";
-import friesRomi from "../assets/baladi-lunch/fries-romi.png";
 import hotDog from "../assets/baladi-lunch/hot-dog-baladi.png";
 import paneBaladi from "../assets/baladi-lunch/pane-baladi.png";
 import Sogoq from "../assets/baladi-lunch/sogoq-baladi.png";
@@ -98,13 +97,13 @@ export const lunchMeals = [
     price: 40,
     type: "بلدي",
   },
-  {
-    img: friesRomi,
-    Name: "ساندوتش بطاطس جبنه رومي",
-    Description: "بطاطس ,جبنه رومي , عيش بلدي ,كاتشب ",
-    price: 25,
-    type: "بلدي",
-  },
+  // {
+  //   img: friesRomi,
+  //   Name: "ساندوتش بطاطس جبنه رومي",
+  //   Description: "بطاطس ,جبنه رومي , عيش بلدي ,كاتشب ",
+  //   price: 25,
+  //   type: "بلدي",
+  // },
   {
     img: kebdabaladi,
     Name: "ساندوتش كبدة اسكندراني",
