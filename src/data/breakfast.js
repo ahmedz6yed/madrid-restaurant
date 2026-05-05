@@ -1,30 +1,30 @@
-import beans from "../assets/break-fast/beans.jpg";
-import beggBeans from "../assets/break-fast/begg-beans.jpg";
-import boiledEggs from "../assets/break-fast/boiled-eggs.png";
-import eggsBastrma from "../assets/break-fast/eggs-bastrma.jpg";
-import eggsBeans from "../assets/break-fast/eggs-beans.jpg";
-import friesCheeder from "../assets/break-fast/fries-cheeder.jpg";
-import hotBeans from "../assets/break-fast/hot-beans.jpg";
-import ketFries from "../assets/break-fast/ket-fries.jpg";
-import mionizFries from "../assets/break-fast/mioniz-fries.jpg";
-import mkFries from "../assets/break-fast/mk-fries.jpg";
-import omlet from "../assets/break-fast/omlet.jpg";
-import pickle from "../assets/break-fast/pickle.jpg";
-import romiFries from "../assets/break-fast/romi-fries.jpg";
-import splitImage3 from "../assets/break-fast/split-image-3.jpg";
-import tahinSaladFries from "../assets/break-fast/tahin-salad-fries.png";
+import beans from "../../public/break-fast/beans.webp";
+import beggBeans from "../../public/break-fast/begg-beans.webp";
+import boiledEggs from "../../public/break-fast/boiled-eggs.webp";
+import eggsBastrma from "../../public/break-fast/eggs-bastrma.webp";
+import eggsBeans from "../../public/break-fast/eggs-beans.webp";
+import friesCheeder from "../../public/break-fast/fries-cheeder.webp";
+import hotBeans from "../../public/break-fast/hot-beans.webp";
+import ketFries from "../../public/break-fast/ket-fries.webp";
+import mionizFries from "../../public/break-fast/mioniz-fries.webp";
+import mkFries from "../../public/break-fast/mk-fries.webp";
+import omlet from "../../public/break-fast/omlet.webp";
+import pickle from "../../public/break-fast/pickle.webp";
+import romiFries from "../../public/break-fast/romi-fries.webp";
+import splitImage3 from "../../public/break-fast/split-image-3.webp";
+import tahinSaladFries from "../../public/break-fast/tahin-salad-fries.webp";
 //--------------------------------------Feni Items
-import cottageFeno from "../assets/sandwitches/cottage-feno.png";
-// import kiriRomi from "../assets/sandwitches/kiri-romi.png";
-// import lanchonSalad from "../assets/sandwitches/lanchon-salad.png";
-// import lanchon from "../assets/sandwitches/lanchon.png";
-// import skalansClean from "../assets/sandwitches/skalans-clean.png";
-import kiri from "../assets/sandwitches/kiri.png";
-import cheeder from "../assets/sandwitches/cheeder.png";
-import tomatosCheese from "../assets/sandwitches/tomatos-cheese.png";
-import turkey from "../assets/sandwitches/turkey.png";
-import tuna_salad from "../assets/sandwitches/tuna-salad.png";
-import allInOne from "../assets/sandwitches/all-in-one.png";
+import cottageFeno from "../../public/sandwitches/cottage-feno.webp";
+// import kiriRomi from "../../public/sandwitches/kiri-romi.webp";
+// import lanchonSalad from "../../public/sandwitches/lanchon-salad.webp";
+// import lanchon from "../../public/sandwitches/lanchon.webp";
+// import skalansClean from "../../public/sandwitches/skalans-clean.webp";
+import kiri from "../../public/sandwitches/kiri.webp";
+import cheeder from "../../public/sandwitches/cheeder.webp";
+import tomatosCheese from "../../public/sandwitches/tomatos-cheese.webp";
+import turkey from "../../public/sandwitches/turkey.webp";
+import tuna_salad from "../../public/sandwitches/tuna-salad.webp";
+import allInOne from "../../public/sandwitches/all-in-one.webp";
 
 export const menuItems = [
   // 🫘 فول
@@ -232,7 +232,7 @@ export const menuItems = [
   {
     id: 8,
     img: allInOne,
-    Name: "ساندوتش كله في واحد",
+    Name: "ساندوتش كله في رغيف",
     Description: "لانشون , جبنه رومي , جبنه كيري ,جبنه شيدر",
     price: 25,
     type: "فينو",

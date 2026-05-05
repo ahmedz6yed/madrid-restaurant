@@ -1,15 +1,15 @@
-import rice1 from "../assets/rice/rice-kebda.png";
-import rice2 from "../assets/rice/rice-pane.png";
-import rice3 from "../assets/rice/rice-strips.png";
-import rice4 from "../assets/rice/fahita-rice.png";
-// import rice5 from "../assets/rice/chicken-meal.png";
-import rice6 from "../assets/rice/zinger-rice.png";
-import pastaKebda from "../assets/pasta/pasta-kebda.png";
-import pastaPane from "../assets/pasta/pasta-pane.png";
-import pastaSauce from "../assets/pasta/pasta-sauce.png";
-import pastaStrips from "../assets/pasta/pasta-strips.png";
-import fahita from "../assets/pasta/fahita.png";
-import pastazinger from "../assets/pasta/zinger-pasta.png";
+import rice1 from "../../public/rice/rice-kebda.webp";
+import rice2 from "../../public/rice/rice-pane.webp";
+import rice3 from "../../public/rice/rice-strips.webp";
+import rice4 from "../../public/rice/fahita-rice.webp";
+// import rice5 from "../../public/rice/chicken-meal.webp";
+import rice6 from "../../public/rice/zinger-rice.webp";
+import pastaKebda from "../../public/pasta/pasta-kebda.webp";
+import pastaPane from "../../public/pasta/pasta-pane.webp";
+import pastaSauce from "../../public/pasta/pasta-sauce.webp";
+import pastaStrips from "../../public/pasta/pasta-strips.webp";
+import fahita from "../../public/pasta/fahita.webp";
+import pastazinger from "../../public/pasta/zinger-pasta.webp";
 
 export const riceMenu = [
   {

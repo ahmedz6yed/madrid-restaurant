@@ -1,7 +1,7 @@
-import chicken from "../assets/burger/chicken-burger.png";
-import meat from "../assets/burger/meat-burger.png";
-import chickenFries from "../assets/burger/fries-chicken-burger.png";
-import meatFries from "../assets/burger/fries-meat-burger.png";
+import chicken from "../../public/burger/chicken-burger.webp";
+import meat from "../../public/burger/meat-burger.webp";
+import chickenFries from "../../public/burger/fries-chicken-burger.webp";
+import meatFries from "../../public/burger/fries-meat-burger.webp";
 export const burgerData = [
   {
     id: 1,

@@ -1,28 +1,28 @@
-import friesSori from "../assets/sori/fries.png";
-import paneSori from "../assets/sori/pane-sori.png";
-import stripsSori from "../assets/sori/strips-sori.png";
-import fahitaSori from "../assets/sori/fahita-sori.png";
-import kebdaSori from "../assets/sori/kebda-sori.png";
-import zingerSori from "../assets/sori/zinger-sori.png";
-import soqoqSori from "../assets/sori/sogoq-sori.png";
-import hotDogSori from "../assets/sori/hotdog-sori.png";
+import friesSori from "../../public/sori/fries.webp";
+import paneSori from "../../public/sori/pane-sori.webp";
+import stripsSori from "../../public/sori/strips-sori.webp";
+import fahitaSori from "../../public/sori/fahita-sori.webp";
+import kebdaSori from "../../public/sori/kebda-sori.webp";
+import zingerSori from "../../public/sori/zinger-sori.webp";
+import soqoqSori from "../../public/sori/sogoq-sori.webp";
+import hotDogSori from "../../public/sori/hotdog-sori.webp";
 
 //-----------------------------------
-import fahitabaladi from "../assets/baladi-lunch/fahita-baladi.png";
-import hotDog from "../assets/baladi-lunch/hot-dog-baladi.png";
-import paneBaladi from "../assets/baladi-lunch/pane-baladi.png";
-import Sogoq from "../assets/baladi-lunch/sogoq-baladi.png";
-import kebdabaladi from "../assets/baladi-lunch/kebda-baladi.png";
+import fahitabaladi from "../../public/baladi-lunch/fahita-baladi.webp";
+import hotDog from "../../public/baladi-lunch/hot-dog-baladi.webp";
+import paneBaladi from "../../public/baladi-lunch/pane-baladi.webp";
+import Sogoq from "../../public/baladi-lunch/sogoq-baladi.webp";
+import kebdabaladi from "../../public/baladi-lunch/kebda-baladi.webp";
 //-----------------------creps ---------------------------------
-import kebdacrep from "../assets/creps/kebda.png";
-import stripscrep from "../assets/creps/strip-crep.png";
-import sogoqcrep from "../assets/creps/sogoq.png";
-import fahitacrep from "../assets/creps/fahita-crep.png";
+import kebdacrep from "../../public/creps/kebda.webp";
+import stripscrep from "../../public/creps/strip-crep.webp";
+import sogoqcrep from "../../public/creps/sogoq.webp";
+import fahitacrep from "../../public/creps/fahita-crep.webp";
 
-import hotDogCrep from "../assets/creps/hot-dog.png";
-import friesCrep from "../assets/creps/fries.png";
-import panecrep from "../assets/creps/pane-crep.png";
-import zingercrep from "../assets/creps/zinger.png";
+import hotDogCrep from "../../public/creps/hot-dog.webp";
+import friesCrep from "../../public/creps/fries.webp";
+import panecrep from "../../public/creps/pane-crep.webp";
+import zingercrep from "../../public/creps/zinger.webp";
 
 export const lunchMeals = [
   {
